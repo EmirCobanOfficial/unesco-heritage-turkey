@@ -89,6 +89,22 @@ Tarayıcı (Google Maps + Web Speech API)
 Express REST API  ──►  SQL Server (Yorumlar tablosu)
 ```
 
+### Proje Yapısı / Project Structure
+
+```
+tubitak/
+├── server.js        # Express + MSSQL yorum API'si / comment API
+├── web/             # İstemci (statik frontend) / static frontend
+│   ├── index.html   # Giriş sayfası / landing page
+│   ├── harita.html  # Etkileşimli harita / interactive map
+│   ├── harita.js    # Harita, marker ve yorum mantığı / map, markers, comments
+│   ├── style.css
+│   ├── images/      # Miras alanı görselleri / heritage site images
+│   └── *.html       # Şehir/alan detay sayfaları / site detail pages
+├── docs/            # Proje notları / project notes
+└── README.md
+```
+
 ---
 
 ## 🚀 Kurulum / Getting Started
@@ -121,9 +137,9 @@ npm start
 
 ### Google Maps Anahtarı / Google Maps Key
 
-`harita.html` içindeki `YOUR_GOOGLE_MAPS_API_KEY` placeholder'ını kendi API anahtarınızla değiştirin. Güvenlik için Google Cloud Console'da anahtara **HTTP referrer kısıtlaması** eklemeniz önerilir.
+`web/harita.html` içindeki `YOUR_GOOGLE_MAPS_API_KEY` placeholder'ını kendi API anahtarınızla değiştirin. Güvenlik için Google Cloud Console'da anahtara **HTTP referrer kısıtlaması** eklemeniz önerilir.
 
-> _Replace the `YOUR_GOOGLE_MAPS_API_KEY` placeholder in `harita.html` with your own key. Restricting the key by HTTP referrer in Google Cloud Console is strongly recommended._
+> _Replace the `YOUR_GOOGLE_MAPS_API_KEY` placeholder in `web/harita.html` with your own key. Restricting the key by HTTP referrer in Google Cloud Console is strongly recommended._
 
 ### Veritabanı Şeması / Database Schema
 
