@@ -11,6 +11,7 @@ _A TÜBİTAK 4006-B supported academic web application that presents Türkiye's 
 <br />
 
 ![Durum](https://img.shields.io/badge/durum-akt%C4%B1f-brightgreen)
+![Lisans](https://img.shields.io/badge/lisans-MIT-green)
 ![TÜBİTAK](https://img.shields.io/badge/TÜBİTAK-4006--B-1f6feb)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
@@ -217,15 +218,15 @@ Katkılarınızı memnuniyetle karşılıyoruz! Katkı süreci şu şekilde işl
 
 > _Contributions are welcome. Fork the repo, create a feature branch, commit with meaningful messages, and open a Pull Request. The `main` branch is protected — all changes are merged after PR review and passing status checks._
 
-Detaylı yönergeler için `CONTRIBUTING.md` dosyasına bakın (yol haritasında eklenmektedir).
+Detaylı yönergeler için [`CONTRIBUTING.md`](CONTRIBUTING.md) dosyasına bakın. Katılımcılardan [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) kurallarına uyması beklenir.
 
 ---
 
 ## 📄 Lisans / License
 
-Bu proje bir TÜBİTAK 4006-B Bilim Fuarı çalışmasıdır. Lisans bilgisi `LICENSE` dosyasında belirtilecektir.
+Bu proje **MIT Lisansı** ile lisanslanmıştır. Serbestçe kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek koşul telif bildiriminin korunmasıdır. Ayrıntılar için [`LICENSE`](LICENSE) dosyasına bakın.
 
-> _This project is a TÜBİTAK 4006-B Science Fair work. License details will be provided in the `LICENSE` file._
+> _This project is licensed under the **MIT License** — free to use, modify, and distribute, provided the copyright notice is retained. See the [`LICENSE`](LICENSE) file for details._
 
 ---
 
