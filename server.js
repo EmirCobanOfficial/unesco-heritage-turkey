@@ -4,16 +4,19 @@ const cors = require("cors");
 const sql = require("mssql");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
+// Veritabanı yapılandırması ortam değişkenlerinden okunur.
+// Değerler .env dosyasında tanımlanır (bkz. .env.example).
 const config = {
-  user: "",
-  password: "",
-  server: "",
-  database: "",
+  user: process.env.DB_USER || "",
+  password: process.env.DB_PASSWORD || "",
+  server: process.env.DB_SERVER || "",
+  database: process.env.DB_DATABASE || "",
   options: {
-    encrypt: true,
-    trustServerCertificate: true,
+    // Varsayılan olarak açık; .env'de "false" ile kapatılabilir.
+    encrypt: process.env.DB_ENCRYPT !== "false",
+    trustServerCertificate: process.env.DB_TRUST_SERVER_CERTIFICATE !== "false",
   },
 };
 
