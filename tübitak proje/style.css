@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Genel Harita Stili */
+#map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ana Sayfa Buton Grubu */
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+.map-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.active {
+  background-color: #28a745;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 128, 0, 0.2);
+}
+
+/* Ana İçerik Alanı */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 160px);
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Modal Ortak Yapısı */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: #111; /* Daha karanlık arka plan */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 95%;
+  height: 95vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Resim ve Açıklama Alanı */
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+#galleryImage,
+.modal img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+#imageDescription,
+#descText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  white-space: normal;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Modal Kapatma Butonu */
+.close {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+/* Küçük Resimler */
+.thumbnail {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Link Stili */
+a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Açıklama ve Butonlar */
+#descButton,
+#speakButton,
+#galleryButton,
+#tourButton {
+  margin: 5px 1%;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 48%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+#descButton {
+  background-color: #ff9800;
+}
+
+#descButton:hover {
+  background-color: #e68900;
+}
+
+#speakButton {
+  background-color: #d32f2f;
+}
+
+#speakButton:hover {
+  background-color: #b71c1c;
+}
+
+#galleryButton {
+  background-color: #007bff;
+}
+
+#galleryButton:hover {
+  background-color: #0056b3;
+}
+
+#tourButton {
+  background-color: #673ab7;
+}
+
+#tourButton:hover {
+  background-color: #512da8;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Carousel Butonları */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Header & Footer */
+header p {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1px;
+}
+
+/* Google Maps InfoWindow */
+.gm-style-iw {
+  overflow: hidden !important;
+}
+
+.gm-style-iw button {
+  transition: all 0.3s ease;
+}
+
+.gm-style-iw button:hover {
+  opacity: 0.8;
+}
+
+/* Tüm img etiketleri */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  #map-container {
+    height: calc(100vh - 80px);
+    border-radius: 5px;
+  }
+
+  #buttons {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #buttons button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    width: 95%;
+    height: auto;
+    max-height: 90vh;
+    padding: 15px;
+  }
+
+  .carousel-item img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+
+  #descButton,
+  #speakButton,
+  #galleryButton,
+  #tourButton {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+}
+@media (max-width: 576px) {
+  #map-container {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  header p {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #buttons {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  #buttons button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .modal-content {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #imageDescription,
+  #descText {
+    font-size: 14px;
+    max-height: 150px;
+    padding: 10px;
+  }
+
+  .carousel-item img {
+    max-height: 40vh;
+  }
+
+  #descButton,
+  #speakButton,
+  #galleryButton,
+  #tourButton {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+@media (max-width: 400px) {
+  button,
+  #buttons button,
+  #descButton,
+  #speakButton,
+  #galleryButton,
+  #tourButton {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  #imageDescription,
+  #descText {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .modal-content {
+    padding: 8px;
+  }
+
+  a {
+    font-size: 13px;
+  }
+}

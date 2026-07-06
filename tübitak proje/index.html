@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNESCO Miras Alanları - Türkiye</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>UNESCO Dünya Miras Alanları - Türkiye</h1>
+      <p>Keşfetmek için haritaya göz atın</p>
+    </header>
+
+    <main>
+      <div id="buttons">
+        <button class="btn map-btn" onclick="navigateToMap()">
+          Haritaya Git
+        </button>
+      </div>
+    </main>
+
+    <script src="harita.js"></script>
+
+    <footer>
+      <p>© 2025 UNESCO Dünya Miras Alanları</p>
+    </footer>
+    <script>
+      function navigateToMap() {
+        document.querySelector(".btn").classList.add("active");
+        setTimeout(function () {
+          window.location.href = "harita.html";
+        }, 500);
+      }
+
+      function navigateToCategory(category) {
+        document.querySelector(".btn").classList.add("active");
+        setTimeout(function () {
+          window.location.href = category + ".html";
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
