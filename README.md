@@ -43,6 +43,7 @@ _🎬 Projenin çalışışı: haritada gezinme → marker'a tıklama → bilgi 
 - [💻 Teknolojiler / Technologies](#-teknolojiler--technologies)
 - [🏗️ Mimari / Architecture](#️-mimari--architecture)
 - [🚀 Kurulum / Getting Started](#-kurulum--getting-started)
+- [🌐 Dağıtım / Deployment](#-dağıtım--deployment)
 - [🔌 API Uç Noktaları / API Endpoints](#-api-uç-noktaları--api-endpoints)
 - [📷 Ekran Görüntüleri / Screenshots](#-ekran-görüntüleri--screenshots)
 - [🎪 Proje Sergisi / Project Exhibition](#-proje-sergisi--project-exhibition)
@@ -167,6 +168,19 @@ CREATE TABLE Yorumlar (
     tarih   DATETIME          NOT NULL
 );
 ```
+
+---
+
+## 🌐 Dağıtım / Deployment
+
+> ⚠️ Bu proje bir **Node.js + MSSQL** uygulamasıdır ve statik dosya barındıran **GitHub Pages'te çalışmaz**. Yorum/puanlama özelliği bir **Node sunucusu** ve **SQL Server** gerektirir.
+
+- 🖥️ **Çalışma ortamı:** Uygulama, Node.js çalıştırabilen bir sunucuda barındırılmalıdır (örn. **Render**, **Railway**, **Azure App Service** veya bir VPS) ve erişilebilir bir **SQL Server (MSSQL)** veritabanına bağlanmalıdır.
+- 🧩 **Statik vs. dinamik:** Harita, galeri, sesli anlatım ve 360° tur tarayıcıda çalışır; ancak yorum sistemi backend (`server.js`) olmadan çalışmaz. Bu nedenle proje tek başına statik olarak yayınlanamaz.
+- 🔧 **Yapılandırma:** Dağıtımdan önce `.env` dosyasını oluşturun (`cp .env.example .env`) ve veritabanı bilgilerini doldurun. Ayrıca `web/harita.html` içindeki `YOUR_GOOGLE_MAPS_API_KEY` placeholder'ını geçerli bir anahtarla değiştirin.
+- ▶️ **Başlatma:** `npm install` → `npm start` (sunucu, `PORT` ortam değişkenindeki portu dinler).
+
+> _This is a **Node.js + MSSQL** application — it will **not run on GitHub Pages** (static-only). Deploy it to a Node-capable host (Render, Railway, Azure, or a VPS) connected to a SQL Server database. Create your `.env` and set a valid Google Maps API key before deploying._
 
 ---
 
