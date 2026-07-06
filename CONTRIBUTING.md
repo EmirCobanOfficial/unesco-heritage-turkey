@@ -8,7 +8,7 @@ Bu projeye ilgi gösterdiğiniz için teşekkürler! 🎉 **Türkiye UNESCO Dün
 
 ## 📋 Başlamadan Önce
 
-- Bir **hata** mı buldunuz veya bir **öneriniz** mi var? Önce açık [issue'lara](https://github.com/EmirCobanOfficial/tubitak/issues) göz atın; yoksa uygun şablonla yeni bir issue açın.
+- Bir **hata** mı buldunuz veya bir **öneriniz** mi var? Önce açık [issue'lara](https://github.com/EmirCobanOfficial/unesco-heritage-turkey/issues) göz atın; yoksa uygun şablonla yeni bir issue açın.
 - Büyük bir değişiklik planlıyorsanız, kod yazmadan önce bir issue açıp fikrinizi tartışmanız zaman kaybını önler.
 
 ---
@@ -20,8 +20,8 @@ Bu projeye ilgi gösterdiğiniz için teşekkürler! 🎉 **Türkiye UNESCO Dün
 
 2. **Klonlayın**
    ```bash
-   git clone https://github.com/<kullanici-adiniz>/tubitak.git
-   cd tubitak
+   git clone https://github.com/<kullanici-adiniz>/unesco-heritage-turkey.git
+   cd unesco-heritage-turkey
    ```
 
 3. **Bir dal (branch) oluşturun**

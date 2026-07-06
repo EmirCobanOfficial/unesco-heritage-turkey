@@ -8,6 +8,10 @@ Türkiye'nin **UNESCO Dünya Miras Listesi**'ndeki kültürel varlıkları etkil
 
 _A TÜBİTAK 4006-B supported academic web application that presents Türkiye's cultural assets on the **UNESCO World Heritage List** via an interactive map._
 
+**Türkiye'nin UNESCO Dünya Mirası alanlarını; fotoğraf, sesli anlatım, 360° sanal tur ve topluluk yorumlarıyla tek bir interaktif haritada keşfedin.**
+
+_Explore Türkiye's UNESCO World Heritage sites on one interactive map — with photos, audio narration, 360° virtual tours, and community reviews._
+
 <br />
 
 ![Durum](https://img.shields.io/badge/durum-akt%C4%B1f-brightgreen)
@@ -19,6 +23,14 @@ _A TÜBİTAK 4006-B supported academic web application that presents Türkiye's 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+
+<br />
+<br />
+
+<!-- 🎬 DEMO: Gerçek kaydı ekledikten sonra alttaki placeholder satırını  ![Proje Demosu](docs/demo.gif)  ile değiştirin. -->
+[![Proje Demosu — harita · marker tıklama · yorum sistemi](https://placehold.co/860x440/1f6feb/ffffff?text=Demo+GIF+%E2%80%94+harita+%C2%B7+marker+%C2%B7+yorum)](https://github.com/EmirCobanOfficial/unesco-heritage-turkey)
+
+_🎬 Projenin çalışışı: haritada gezinme → marker'a tıklama → bilgi penceresi & yorum ekleme. **(Buraya kısa bir GIF/ekran kaydı eklenecek — üstteki placeholder'ı `docs/demo.gif` ile değiştirin.)**_
 
 </div>
 
@@ -93,7 +105,7 @@ Express REST API  ──►  SQL Server (Yorumlar tablosu)
 ### Proje Yapısı / Project Structure
 
 ```
-tubitak/
+unesco-heritage-turkey/
 ├── server.js        # Express + MSSQL yorum API'si / comment API
 ├── web/             # İstemci (statik frontend) / static frontend
 │   ├── index.html   # Giriş sayfası / landing page
@@ -122,8 +134,8 @@ tubitak/
 
 ```bash
 # 1) Depoyu klonlayın / Clone the repository
-git clone https://github.com/EmirCobanOfficial/tubitak.git
-cd tubitak
+git clone https://github.com/EmirCobanOfficial/unesco-heritage-turkey.git
+cd unesco-heritage-turkey
 
 # 2) Bağımlılıkları kurun / Install dependencies
 npm install
