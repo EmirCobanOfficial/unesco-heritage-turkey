@@ -1,5 +1,5 @@
 {
-  "name": "tubitak-unesco-haritasi",
+  "name": "unesco-heritage-turkey",
   "version": "1.0.0",
   "description": "Türkiye UNESCO Dünya Mirasları Haritası — TÜBİTAK 4006-B destekli etkileşimli web uygulaması",
   "main": "server.js",
@@ -29,6 +29,6 @@
   "author": "Emir Çoban (EmirCobanOfficial)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EmirCobanOfficial/tubitak.git"
+    "url": "https://github.com/EmirCobanOfficial/unesco-heritage-turkey.git"
   }
 }
